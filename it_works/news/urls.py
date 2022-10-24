@@ -5,5 +5,5 @@ urlpatterns = [
     path("/", news_site, name="news"),
     path("/add", add_news, name="add_news"),
     path("/<int:id>", news_detail, name="news_detail"),
-    path("/category/", categories_site, name="category")
-]
+    path("/category/", categories_site, name="category"),
+    ]
