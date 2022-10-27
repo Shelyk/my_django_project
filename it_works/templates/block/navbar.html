@@ -16,17 +16,17 @@
           {% endif %}
           {% endfor %}
       </ul>
-        <form action="" class="form-inline my-2 my-lg-0">
-            <input type="text" class="form-control mr-sm-2" placeholder="Пошук" aria-label="Пошук">
+        <form action="{% url 'search_results' %}" method="get" class="form-inline my-2 my-lg-0">
+            <input name="q" type="text" class="form-control mr-sm-2" placeholder="Пошук" aria-label="Пошук">
             <button class="btn btn-outline-success my-2 my-sm-0 mr-2" type="submit">Пошук</button>
         </form>
        <div class="sign">
             {% if request.user.is_authenticated %}
              <h3 class="user">{{ request.user.first_name }} {{ request.user.last_name }}</h3>
-             <a href="{% url 'logout' %}" class="btn btn-outline-dark">Вийти</a>
+             <a href="{% url 'signout' %}" class="btn btn-outline-dark">Вийти</a>
             {% else %}
-                <a href="{% url 'sign-in' %}" class="btn btn-outline-dark mr-2">Вхід</a>
-                <a href="{% url 'sign-up' %}" class="btn btn-outline-dark mr-2">Регістрація</a>
+                <a href="{% url 'signin' %}" class="btn btn-outline-dark mr-2">Вхід</a>
+                <a href="{% url 'signup' %}" class="btn btn-outline-dark mr-2">Регістрація</a>
             {% endif %}
         </div>
     </div>

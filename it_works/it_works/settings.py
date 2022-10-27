@@ -44,7 +44,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'ckeditor',
-    'ckeditor_uploader'
+    'ckeditor_uploader',
+    'taggit'
 ]
 
 MIDDLEWARE = [
@@ -174,3 +175,5 @@ CKEDITOR_CONFIGS = {
 }
 
 ###################################
+
+LOGOUT_REDIRECT_URL = "/"
